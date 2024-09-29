@@ -1,5 +1,4 @@
 #################### Python reported the Error
-from multiprocessing.managers import Value
 
 # ValueError: invalid literal for int() with base 10: '1a'
 x: int = 0
@@ -45,7 +44,30 @@ while True:
         if not 1.4 <= height <= 3.0:
              raise ValueError(f'{height} not in range')
         break
+    except ValueError as e:
+        # e: Error = ValueError
+        print(e)
+
+print(f"height is {height}")
+
+height: float = 0
+while True:
+    try:
+        height = float(input('enter height: '))
+        if 1.4 <= height <= 3.0:
+             break
+        print('height not in range...')
     except:
         print('wrong height number, or range...')
 
 print(f"height is {height}")
+height: float = 0
+while not 1.4 <= height <= 3.0:
+    try:
+        height = float(input('enter height: ')) # 5
+    except:
+        print('wrong height number, or range...')
+
+
+
+
